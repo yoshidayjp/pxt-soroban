@@ -1,8 +1,11 @@
 //% weight=70 icon="\uf1ec" color=#00bbd7 block="そろばん"
 namespace soroban {
-    //% blockId=show_number block="Show a number %num"
+    //% blockId=show_number block="かずを ひょうじ %num"
     export function showNumber(num: number = 0): void {
         let n = num
+        for (let y = 1; y < 5; y++) {
+            led.unplot(0, y)
+        }
         if (n < 0) {
             led.plot(0, 2)
             n *= -1
